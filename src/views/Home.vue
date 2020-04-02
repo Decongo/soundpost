@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ProjectTag @click.native='toProject("My Song 1")' :projectTitle='"My Song 1"' class='my-4'/>
+    <ProjectTag @click.native='toProject("An Idea")' :projectTitle='"An Idea"' class='my-4'/>
+    <ProjectTag @click.native='toProject("Song")' :projectTitle='"Song"' class='my-4'/>
+
+    <v-btn 
+      fab 
+      color='grey darken-2' 
+      dark
+      absolute
+      right
+    >
+      <v-icon x-large dark class='pa-0'>mdi-plus-thick</v-icon>
+    </v-btn>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import ProjectTag from '../components/ProjectTag'
 
 export default {
   name: 'Home',
+
   components: {
-    HelloWorld
+    ProjectTag
+  },
+
+  methods: {
+    toProject(projectName) {
+      this.$store.commit('setProjectName', projectName);
+      this.$router.push('/project');
+    }
   }
 }
 </script>
