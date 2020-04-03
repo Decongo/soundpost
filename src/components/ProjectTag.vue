@@ -1,8 +1,13 @@
 <template>
   <div>
-    <v-card class='py-2 grey darken-2'>
-      <v-card-text class='white--text'>{{projectTitle}}</v-card-text>
-    </v-card>
+    <v-btn 
+      block 
+      x-large 
+      dark 
+      class='grey darken-2'
+    >
+      {{projectTitle}}
+    </v-btn>
   </div>
 </template>
 
