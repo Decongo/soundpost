@@ -5,11 +5,20 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    projectName: ""
+    showBackButton: false,
+    projectName: "",
+    appBarTitle: "Soundpost"
   },
   mutations: {
-    setProjectName(state, projectName) {
+    toProject(state, projectName) {
       state.projectName = projectName;
+      state.appBarTitle = projectName;
+      state.showBackButton = true;
+    },
+
+    toHome(state) {
+      state.appBarTitle = 'Soundpost';
+      state.showBackButton = false;
     }
   },
   actions: {

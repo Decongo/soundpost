@@ -26,9 +26,13 @@ export default {
     ProjectTag
   },
 
+  mounted() {
+    this.$store.commit('setAppBarTitle', "Soundpost")
+  },
+
   methods: {
     toProject(projectName) {
-      this.$store.commit('setProjectName', projectName);
+      this.$store.commit('toProject', projectName);
       this.$router.push('/project');
     }
   }
