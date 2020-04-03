@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     showBackButton: false,
     projectName: "",
-    appBarTitle: "Soundpost"
+    appBarTitle: "Soundpost",
+    playing: false
   },
   mutations: {
     toProject(state, projectName) {
@@ -19,6 +20,14 @@ export default new Vuex.Store({
     toHome(state) {
       state.appBarTitle = 'Soundpost';
       state.showBackButton = false;
+    },
+
+    play(state) {
+      state.playing = true;
+    },
+
+    pause(state) {
+      state.playing = false;
     }
   },
   actions: {
