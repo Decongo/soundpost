@@ -15,7 +15,7 @@
     <v-btn v-else icon class='ma-2' @click='pause()'>
       <v-icon x-large>mdi-pause</v-icon>
     </v-btn>
-    <v-btn icon class='ma-2'>
+    <v-btn icon class='ma-2' @click='comment()'>
       <v-icon large>mdi-comment</v-icon>
     </v-btn>
   </v-card>
@@ -26,7 +26,7 @@ export default {
   name: 'ControlPanel',
 
   props: {
-    playing: String
+    playing: Boolean
   },
 
   methods: {
@@ -38,6 +38,9 @@ export default {
     },
     skipTop() {
       this.$store.commit('skipTop');
+    },
+    comment() {
+      this.$emit('comment');
     }
   }
 }

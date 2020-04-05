@@ -10,6 +10,7 @@ export default new Vuex.Store({
     appBarTitle: "Soundpost",
     playing: false,
     playheadPosition: 0,
+    commentThreads: new Set()
   },
   mutations: {
     toProject(state, projectName) {
@@ -48,6 +49,10 @@ export default new Vuex.Store({
 
     skipTop(state) {
       state.playheadPosition = 0;
+    },
+
+    addComment(state, commentThread) {
+      state.commentThreads.add(commentThread);
     }
   },
   actions: {

@@ -30,7 +30,6 @@ export default {
     return {
       tracks: ["Vocals", "Guitar", "Bass", "Drums"],
       selectedTrack: "",
-      // playheadPosition: '0'
     }
   },
 
